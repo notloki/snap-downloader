@@ -3,12 +3,16 @@ from sys import argv
 from requests import get
 import json
 from dl import dlfile
-# snap_name = argv[0]
-snap_name = 'p7zip-desktop'
-#if len(argv) < 1:
-arch = 'amd64'
-#else:
-#  arch = argv[1]
+
+try:
+  snap_name = argv[1]
+except:
+  raise 'python3 -m snap-downloader.py [SNAPNAME] [ARCHITECTURE]'
+
+if len(argv) < 3:
+  arch = 'amd64'
+else:
+  arch = argv[1]
 
 snap_api_uri = 'https://api.snapcraft.io/v2/snaps/info/' + snap_name
 outfile_name = snap_name + '_' + arch + '.snap'
