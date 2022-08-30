@@ -1,8 +1,8 @@
-# snap-downloader
+# snap-downloader - Python3 Edition
 Downloads Snaps from snapcraft.io
 
 ## use
-./snap-downloader.ps1 SNAPNAME ARCHITECTURE
+python3 -m snap-downloader.py SNAPNAME ARCHITECTURE
 
 ## example
-./snap-downloader.ps1 mosquitto arm64
+python3 -m snap-downloader.py mosquitto arm64
